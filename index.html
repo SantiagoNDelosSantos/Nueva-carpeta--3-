@@ -350,16 +350,38 @@
         border-radius: 3em;
         background-color: #f3f3f3;
     }
+
+
+
+    #loader {
+        border: 3px solid white;
+        border-top: 4px solid transparent;
+        border-radius: 100%;
+        width: 1em;
+        height: 1em;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
 </style>
 
 <body>
-     
+
     <div class="SessionContainer">
-        <img src="https://i.ibb.co/GHkynYS/Logo-LMU.png"  alt="Logo-BK-Grande" class="logo">
+        <img src="https://i.ibb.co/GHkynYS/Logo-LMU.png" alt="Logo-BK-Grande" class="logo">
         <h1>Login 2 - Acceso</h1>
         <form id="login2Form" class="styleFormSession">
             <div class="input__wrapper">
-                <input type="password" name="password" id="password" class="input__field" placeholder="Contraseña" required>
+                <input type="password" name="password" id="password" class="input__field" placeholder="Contraseña"
+                    required>
                 <label for="password" class="input__label">Contraseña</label>
                 <svg id="togglePassword" class="icon-eye w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
@@ -370,17 +392,60 @@
                 </svg>
             </div>
             <div class="input__wrapper">
-                <input type="text" name="accessCode" id="accessCode" class="input__field" placeholder="Código de acceso" required>
+                <input type="text" name="accessCode" id="accessCode" class="input__field" placeholder="Código de acceso"
+                    required>
                 <label for="accessCode" class="input__label">Código de acceso</label>
             </div>
-            <input class="botonText" type="submit" value="Iniciar sesión">
+
+            <input id="changebtn1" class="botonText" type="submit" value="Iniciar sesión" style="display: block;">
+
+            <div id="changebtn2" class="botonText" style="display: none; background-color: #009FF5;">
+                <div style="display: flex; align-items: center; justify-content:center; height: 19.340px !important;">
+                    <div id="loader"></div>
+                </div>
+            </div>
+
+
         </form>
         <p>¿Has olvidado tu contraseña? <a href="/requestResetPassword">Reestablecer tu contraseña</a></p>
         <p>¿No estás registrado? <a href="/register">Regístrate aquí</a></p>
+
+    </div>
+
+    <!-- Spinner -->
+    <div class="spinner" style="display: none;">
+        <!-- Aquí coloca el código del spinner -->
+        <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <!-- Contenido del spinner -->
+        </svg>
     </div>
 
 
-  
+    <script>
+
+        const form = document.getElementById('login2Form');
+
+        const changebtn1 = document.getElementById('changebtn1')
+        const changebtn2 = document.getElementById('changebtn2')
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Evita que el formulario se envíe automáticamente
+
+            // Oculta el botón y muestra el spinner
+            changebtn1.style.display = 'none';
+            changebtn2.style.display = 'block';
+
+            // Simula una espera de 2 segundos antes de enviar el formulario
+            setTimeout(function () {
+                form.submit(); // Envía el formulario
+                changebtn1.style.display = 'block';
+                changebtn2.style.display = 'none';
+
+            }, 2000);
+        });
+
+    </script>
+
 </body>
 
 
