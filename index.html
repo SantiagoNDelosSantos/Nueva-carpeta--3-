@@ -1,378 +1,377 @@
 <!DOCTYPE html>
 
-<html lang="en" traslate="no"> 
+<html lang="en" traslate="no">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>registro</title>
-    <link rel="icon" type="image/x-icon" href="/imgs/logoVentanaLMU.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.6/dist/sweetalert2.min.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <!-- Metaetiqueta para deshabilitar la traducción -->
-    <meta name="google" content="notranslate">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>registro</title>
+  <link rel="icon" type="image/x-icon" href="/imgs/logoVentanaLMU.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.6/dist/sweetalert2.min.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- Metaetiqueta para deshabilitar la traducción -->
+  <meta name="google" content="notranslate">
 </head>
 
 <style>
-   
-   /* Import de la fuente para toda la pagina */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+  /* Import de la fuente para toda la pagina */
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-/* Reseteo inicial */
-* {
-  text-decoration: none;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'Montserrat' !important;
-}
+  /* Reseteo inicial */
+  * {
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat' !important;
+  }
 
-/* Para toda la pagina y todas las queries */
-body {
-  overflow: auto !important;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 93vh;
-  margin: 0;
-}
+  /* Para toda la pagina y todas las queries */
+  body {
+    overflow: auto !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 93vh;
+    margin: 0;
+  }
 
 
-/*Color celeste ultra claro para el fondo de todas las vistas
+  /*Color celeste ultra claro para el fondo de todas las vistas
   background-color: #f0f5ff;
 */
 
-/* LOGO */
-.logo {
-  width: 8em !important;
-}
-
-/*Scroll bar*/
-::-webkit-scrollbar {
-  width: 0.4em;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #ffffff;
-  border-radius: 1em;
-}
-
-/* Textos para toda la pagina */
-h1,
-h2,
-p {
-  text-align: center !important;
-}
-
-h1 {
-  font-size: 1.6em;
-}
-
-h2 {
-  font-size: 1.2em;
-}
-
-p,
-a {
-  font-size: 1em;
-}
-
-/* Enlaces: */
-a {
-  color: #000000;
-  font-weight: 600;
-}
-
-a:hover {
-  color: #009FF5;
-}
-
-
-/* Estilo para todos los botones con texto */
-.botonText {
-  font-size: 1em;
-  color: #009FF5;
-  text-align: center;
-  background-color: #ffffff;
-  width: auto;
-  padding: 0.7em 0.6em;
-  cursor: pointer;
-  border-radius: 0.5em;
-  border: 0.15em solid #009FF5;
-  border-bottom: 0.15em solid #018dd8;
-}
-
-.botonText:hover {
-  color: #ffffff;
-  background-color: #009FF5;
-  border: 0.15em solid #009FF5;
-  border-bottom: 0.15em solid#009FF5;
-}
-
-/* Spin de carga */ 
-#loader {
-  border: 3px solid white;
-  border-top: 4px solid transparent;
-  border-radius: 100%;
-  width: 1em;
-  height: 1em;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-      transform: rotate(0deg);
+  /* LOGO */
+  .logo {
+    width: 8em !important;
   }
 
-  100% {
-      transform: rotate(360deg);
+  /*Scroll bar*/
+  ::-webkit-scrollbar {
+    width: 0.4em;
   }
-}
 
-/* COLOR CELESTE PARA TODO EL SITIO #009FF5    */
+  ::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 1em;
+  }
 
+  /* Textos para toda la pagina */
+  h1,
+  h2,
+  p {
+    text-align: center !important;
+  }
 
+  h1 {
+    font-size: 1.6em;
+  }
 
+  h2 {
+    font-size: 1.2em;
+  }
 
-/*QUITAR LAS FLECHITAS DE AUMENTAR O RESTAR A LOS IMPUT NUMBER*/
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+  p,
+  a {
+    font-size: 1em;
+  }
 
-/* Estilos de los inputs */
-.input__wrapper {
-  position: relative;
-  width: 100%;
-}
+  /* Enlaces: */
+  a {
+    color: #000000;
+    font-weight: 600;
+  }
 
-.input__field {
-  color: #000000;
-  font-size: 1em;
-  border: 1px solid rgba(255, 255, 255, 0.034);
-  background-color: #f3f3f3;
-  width: 100%;
-  padding: 0.7em 0.6em;
-  border-bottom: 1px solid #d2d2d268;
-  border-radius: 0.5em;
-  text-align: center;
-}
-
-.input__field:not(:placeholder-shown) {
-  border: 1px solid #d8d8d8 !important;
-}
-
-.input__label {
-  position: absolute;
-  top: 0.375rem;
-  left: 0.5rem;
-  padding: 0 0.5em;
-  transition: 0.3s;
-  pointer-events: none;
-  display: none;
-}
-
-.input__field:focus {
-  outline-color: #009FF5 !important;
-}
-
-.input__field:focus+.input__label,
-.input__field:not(:placeholder-shown)+.input__label {
-  display: block;
-  font-size: 0.9em;
-  top: -0.5rem;
-  color: #009FF5;
-  border-radius: 3em;
-  background-color: #f3f3f3;
-}
+  a:hover {
+    color: #009FF5;
+  }
 
 
-/* Sweet Alert*/
-.swal2-popup.swal2-modal.swal2-icon-success.swal2-show,
-.swal2-popup.swal2-modal.swal2-icon-error.swal2-show,
-.swal2-popup.swal2-modal.swal2-icon-info.swal2-show,
-.swal2-popup.swal2-modal.swal2-icon-warning.swal2-show,
-.swal2-popup.swal2-toast,
-.swal2-container.swal2-center>.swal2-popup {
-  border-radius: 1.5em !important;
-  backdrop-filter: blur(6px) !important;
-  background: rgb(255, 255, 255) !important;
-  border-bottom: 0.1em solid rgba(174, 173, 173, 0.78) !important;
-  width: 92%;
-}
-
-.swal2-popup.swal2-toast {
-  font-size: 1em !important;
-}
-
-button.swal2-cancel.swal2-styled {
-  border-radius: 2em;
-  backdrop-filter: blur(6px);
-  background-color: #ffffff00;
-}
-
-.swal2-popup.swal2-toast.swal2-icon-success.swal2-show {
-  padding: 0.2em;
-}
-
-.swal2-container.swal2-center.swal2-backdrop-show {
-  overflow-y: auto;
-  background: #0000004b;
-}
-
-h2#swal2-title {
-  color: black;
-  font-size: 1.3em !important;
-  padding: 0.2em;
-}
-
-div:where(.swal2-container) .swal2-html-container {
-  font-size: 1em !important;
-}
-
-
-div#swal2-html-container {
-  color: black;
-}
-
-.swal2-container.swal2-top-end.swal2-backdrop-show {
-  width: auto !important;
-}
-
-.swal2-icon.swal2-warning,
-.swal2-icon.swal2-error,
-.swal2-icon.swal2-error [class^=swal2-x-mark-line],
-.swal2-icon.swal2-info,
-.swal2-icon.swal2-success,
-.swal2-icon.swal2-success [class^=swal2-success-line] {
-  border-color: #7066e0 !important;
-  color: #7066e0 !important;
-}
-
-.swal2-icon.swal2-error [class^=swal2-x-mark-line],
-.swal2-icon.swal2-success [class^=swal2-success-line] {
-  background-color: #7066e0 !important;
-}
-
-button.swal2-confirm.swal2-styled {
-  background-color: #ffffff00;
-}
-
-.swal2-success-circular-line-left,
-.swal2-success-circular-line-right,
-.swal2-success-fix {
-  background: none !important;
-}
-
-button.swal2-confirm.swal2-styled {
-  border-radius: 6em;
-}
-
-.swal2-styled.swal2-confirm {
-  background-color: #ffffff;
-  color: #7066e0;
-  border: 0.20em solid #7066e0;
-  ;
-}
-
-.swal2-styled.swal2-confirm:hover {
-  background-color: #7066e0;
-  color: #ffffff;
-}
-
-body.swal2-shown.swal2-height-auto {
-  padding-right: 0 !important;
-}
-
-.swal2-styled.swal2-cancel {
-  background-color: #ffffff;
-  color: #9d9d9d;
-  border: 0.20em solid #9d9d9d;
-}
-
-.swal2-styled.swal2-cancel:hover {
-  background-color: #9d9d9d;
-  color: #ffffff;
-}
-
-/* SWEET ALERT - EDITAR PRODUCTO: */
-div:where(.swal2-container) .swal2-input {
-  height: 2em !important;
-  padding: 0 0.75em;
-  border-radius: 2em;
-  background: #EFEFEF;
-  width: 10em;
-}
-
-.swal2-input {
-  color: #000000;
-  font-size: 1em;
-}
-
-.swal2-input::placeholder {
-  color: #757575;
-  font-size: 1em;
-}
-
-    /* Vista de carga*/
-
-.loader-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  /* Estilo para todos los botones con texto */
+  .botonText {
+    font-size: 1em;
+    color: #009FF5;
     text-align: center;
-    gap: 5em;
-}
+    background-color: #ffffff;
+    width: auto;
+    padding: 0.7em 0.6em;
+    cursor: pointer;
+    border-radius: 0.5em;
+    border: 0.15em solid #009FF5;
+    border-bottom: 0.15em solid #018dd8;
+  }
 
-#loader {
-    border: 3px solid #009FF5;
-      border-top: 4px solid transparent;
-    width: 2em;
-    height: 2em;
-}
+  .botonText:hover {
+    color: #ffffff;
+    background-color: #009FF5;
+    border: 0.15em solid #009FF5;
+    border-bottom: 0.15em solid#009FF5;
+  }
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #ddd;
-  min-height: 100vh;
-  padding: 30px;
-}
+  /* Spin de carga */
+  #loader {
+    border: 3px solid white;
+    border-top: 4px solid transparent;
+    border-radius: 100%;
+    width: 1em;
+    height: 1em;
+    animation: spin 1s linear infinite;
+  }
 
-.cards {
-  display: flex;
-}
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
 
-.card {
-  margin: 10px;
-  width: 300px;
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-
-  .image {
-    img {
-      max-width: 100%;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
+    100% {
+      transform: rotate(360deg);
     }
   }
 
-  .content {
-    padding: 20px 30px;
-  }
-}
+  /* COLOR CELESTE PARA TODO EL SITIO #009FF5    */
 
-.card.is-loading {
-  .image,
-  h2,
-  p {
+
+
+
+  /*QUITAR LAS FLECHITAS DE AUMENTAR O RESTAR A LOS IMPUT NUMBER*/
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Estilos de los inputs */
+  .input__wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .input__field {
+    color: #000000;
+    font-size: 1em;
+    border: 1px solid rgba(255, 255, 255, 0.034);
+    background-color: #f3f3f3;
+    width: 100%;
+    padding: 0.7em 0.6em;
+    border-bottom: 1px solid #d2d2d268;
+    border-radius: 0.5em;
+    text-align: center;
+  }
+
+  .input__field:not(:placeholder-shown) {
+    border: 1px solid #d8d8d8 !important;
+  }
+
+  .input__label {
+    position: absolute;
+    top: 0.375rem;
+    left: 0.5rem;
+    padding: 0 0.5em;
+    transition: 0.3s;
+    pointer-events: none;
+    display: none;
+  }
+
+  .input__field:focus {
+    outline-color: #009FF5 !important;
+  }
+
+  .input__field:focus+.input__label,
+  .input__field:not(:placeholder-shown)+.input__label {
+    display: block;
+    font-size: 0.9em;
+    top: -0.5rem;
+    color: #009FF5;
+    border-radius: 3em;
+    background-color: #f3f3f3;
+  }
+
+
+  /* Sweet Alert*/
+  .swal2-popup.swal2-modal.swal2-icon-success.swal2-show,
+  .swal2-popup.swal2-modal.swal2-icon-error.swal2-show,
+  .swal2-popup.swal2-modal.swal2-icon-info.swal2-show,
+  .swal2-popup.swal2-modal.swal2-icon-warning.swal2-show,
+  .swal2-popup.swal2-toast,
+  .swal2-container.swal2-center>.swal2-popup {
+    border-radius: 1.5em !important;
+    backdrop-filter: blur(6px) !important;
+    background: rgb(255, 255, 255) !important;
+    border-bottom: 0.1em solid rgba(174, 173, 173, 0.78) !important;
+    width: 92%;
+  }
+
+  .swal2-popup.swal2-toast {
+    font-size: 1em !important;
+  }
+
+  button.swal2-cancel.swal2-styled {
+    border-radius: 2em;
+    backdrop-filter: blur(6px);
+    background-color: #ffffff00;
+  }
+
+  .swal2-popup.swal2-toast.swal2-icon-success.swal2-show {
+    padding: 0.2em;
+  }
+
+  .swal2-container.swal2-center.swal2-backdrop-show {
+    overflow-y: auto;
+    background: #0000004b;
+  }
+
+  h2#swal2-title {
+    color: black;
+    font-size: 1.3em !important;
+  }
+
+  div:where(.swal2-container) .swal2-html-container {
+    font-size: 1em !important;
+  }
+
+
+  div#swal2-html-container {
+    color: black;
+  }
+
+  .swal2-container.swal2-top-end.swal2-backdrop-show {
+    width: auto !important;
+  }
+
+  .swal2-icon.swal2-warning,
+  .swal2-icon.swal2-error,
+  .swal2-icon.swal2-error [class^=swal2-x-mark-line],
+  .swal2-icon.swal2-info,
+  .swal2-icon.swal2-success,
+  .swal2-icon.swal2-success [class^=swal2-success-line] {
+    border-color: #7066e0 !important;
+    color: #7066e0 !important;
+  }
+
+  .swal2-icon.swal2-error [class^=swal2-x-mark-line],
+  .swal2-icon.swal2-success [class^=swal2-success-line] {
+    background-color: #7066e0 !important;
+  }
+
+  button.swal2-confirm.swal2-styled {
+    background-color: #ffffff00;
+  }
+
+  .swal2-success-circular-line-left,
+  .swal2-success-circular-line-right,
+  .swal2-success-fix {
+    background: none !important;
+  }
+
+  button.swal2-confirm.swal2-styled {
+    border-radius: 6em;
+  }
+
+  .swal2-styled.swal2-confirm {
+    background-color: #ffffff;
+    color: #7066e0;
+    border: 0.20em solid #7066e0;
+    ;
+  }
+
+  .swal2-styled.swal2-confirm:hover {
+    background-color: #7066e0;
+    color: #ffffff;
+  }
+
+  body.swal2-shown.swal2-height-auto {
+    padding-right: 0 !important;
+  }
+
+  .swal2-styled.swal2-cancel {
+    background-color: #ffffff;
+    color: #9d9d9d;
+    border: 0.20em solid #9d9d9d;
+  }
+
+  .swal2-styled.swal2-cancel:hover {
+    background-color: #9d9d9d;
+    color: #ffffff;
+  }
+
+  /* SWEET ALERT - EDITAR PRODUCTO: */
+  div:where(.swal2-container) .swal2-input {
+    height: 2em !important;
+    padding: 0 0.75em;
+    border-radius: 2em;
+    background: #EFEFEF;
+    width: 10em;
+  }
+
+  .swal2-input {
+    color: #000000;
+    font-size: 1em;
+  }
+
+  .swal2-input::placeholder {
+    color: #757575;
+    font-size: 1em;
+  }
+
+  .return {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    ;
+    flex-direction: row;
+    align-items: center;
+    padding: 4%;
+    border-bottom: 1px solid #f3f3f3;
+  }
+
+  a:hover {
+    color: black;
+  }
+
+  h2 {
+    font-weight: 400
+  }
+
+  .AccountContainer {
+    /* Configuración del display flex */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* Medidas y posicion del contenedor*/
+    width: 100%;
+    height: auto;
+  }
+
+  .sectionAccount {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4%;
+    background: #f3f3f3;
+  }
+
+  .sectionDetails {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4%;
+    border-bottom: 1px solid #f3f3f3;
+  }
+
+  /* Efecto de carga */
+  .loadingBox {
+    width: 100%;
+    height: 1.21em;
+    background-color: #f3f3f3;
     background: #eee;
     background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
     border-radius: 5px;
@@ -380,58 +379,128 @@ body {
     animation: 1.5s shine linear infinite;
   }
 
-  .image {
-    height: 200px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+  @keyframes shine {
+    to {
+      background-position-x: -200%;
+    }
   }
 
-  h2 {
-    height: 30px;
+  /* Div para el correo y el name */
+  .actualData {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4%;
+    gap: 0.4em;
+    border-radius: 0.5em;
+    border: 2px solid #f3f3f3;
   }
 
-  p {
-    height: 70px;
+
+
+
+  .additionalContent {
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, margin-top 0.5s ease-out;
+    margin-top: -10px;
+    /* Margen superior negativo para ocultar el contenido */
   }
+
+  .show {
+    display: block;
+    max-height: 1000px;
+    /* Ajusta esta altura según sea necesario */
+    margin-top: 10px;
+    /* Margen superior positivo para mostrar el contenido */
+  }
+
+
+
+
+
+
+
+
+
+  /* LOADER CON UNA PUNTA FINA 
+#loader {
+    border: 3px solid #009FF5;
+    border-top: 4px solid transparent;
+    border-right: 1px;
+    width: 2em;
+    height: 2em;
 }
+*/
 
-@keyframes shine {
-  to {
-    background-position-x: -200%;
+  .pDetails {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.4em;
   }
-}
-
-
 </style>
 
 
 
 <body>
+  <div class="return">
+    <a href="/publications" style="height: 30px;">
+      <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+        width="30" height="30" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="m15 19-7-7 7-7" />
+      </svg>
+    </a>
+    <h1>Panel de usuario</h1>
+    <div></div>
+  </div>
 
+  <div class="AccountContainer">
 
+    <!-- CUENTA-->
 
+    <div class="sectionAccount">
+      <h2>Configuración de la cuenta</h2>
+    </div>
 
-
-    <div class="cards">
-
-      <div class="card">
-        <div class="image">
-          <img src="https://assets.codepen.io/43365/bulldog.jpeg" />
-        </div>
-        <div class="content">
-          <h2>Sleepiest Doggo!</h2>
-          <p>Look at this sleepiest pupper!</p>
-        </div>
+    <div class="sectionDetails">
+      <div class="actualData" id="loadingSkeleton">
+        <div class="loadingBox"></div>
+        <div class="loadingBox"></div>
       </div>
-    
-      <div class="card is-loading">
-        <div class="image"></div>
-        <div class="content">
-          <h2></h2>
-          <p></p>
-        </div>
+      <div class="actualData" id="dataAccount" style="display: none;">
+        <p style="font-weight:bolder;" id="name"></p>
+        <p id="email"></p>
       </div>
-    
+    </div>
+
+    <div class="sectionDetails">
+      <div class="pDetails">
+        <p style="font-weight:bolder;">Nombre</p>
+        <p>Cambiar nombre de usuario</p>
+      </div>
+      <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+        width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
+      </svg>
+    </div>
+
+
+
+
+
+
+    <div class="sectionDetails" id="triggerElement">
+      <p>Este es el elemento de desencadenamiento</p>
+    </div>
+
+    <div class="additionalContent" id="additionalContent">
+      <p>Este es el contenido adicional que aparecerá debajo del elemento de desencadenamiento.</p>
     </div>
 
 
@@ -440,7 +509,80 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+    <div class="sectionDetails">
+      <div class="pDetails">
+        <p style="font-weight:bolder;">Correo</p>
+        <p>Restablecer correo</p>
+      </div>
+      <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+        width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7" />
+      </svg>
+    </div>
+
+    <div class="sectionDetails">
+      <div class="pDetails">
+        <p style="font-weight:bolder;">Contraseña</p>
+        <p>Restablecer contaseña</p>
+      </div>
+      <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+        width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7" />
+      </svg>
+    </div>
+
+    <!-- SELLER -->
+
+    <div class="sectionAccount">
+      <h2>Perfil Seller</h2>
+
+    </div>
+
+
+
+
+
+    <div class="sectionDetails">
+
+      <div id="btnsEditarPerfil">
+      </div>
+
+      <div class="pDetails">
+        <p style="font-weight:bolder;">Correo</p>
+        <p>Restablecer correo</p>
+      </div>
+      <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+        width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7" />
+      </svg>
+    </div>
+
+
     <!--
+    <h2 style="color: rgb(184, 7, 7);">
+        Cerrar sesión
+    </h2>
+
+    <h2 style="color: rgb(184, 7, 7);">
+        Eliminar cuenta
+    </h2>
+
+-->
+
+
+  </div>
+
+
+
+  <!--
 
     <div class="SessionContainer">
         <img src="https://i.ibb.co/GHkynYS/Logo-LMU.png" alt="Logo-BK-Grande" class="logo">
@@ -626,10 +768,32 @@ body {
 
 -->
 
-    <script>
+  <script>
+      setTimeout(() => {
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    name.innerText = "Santiago";
+    email.innerText = "santiagodelossantos630@gmail.com";
+    const loadingSkeleton = document.getElementById('loadingSkeleton');
+    const actualData = document.getElementById('dataAccount');
+
+      loadingSkeleton.style.display = 'none';
+      actualData.style.display = 'flex';
+    }, 100);
 
 
-    </script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const triggerElement = document.getElementById('triggerElement');
+      const additionalContent = document.getElementById('additionalContent');
+
+      triggerElement.addEventListener('click', function () {
+        additionalContent.classList.toggle('show');
+      });
+    });
+
+
+
+  </script>
 
 </body>
 
