@@ -421,6 +421,10 @@
 
 
 
+  .pSecundary{
+    color: gray;
+    font-size: 0.9em;
+}
 
 
 
@@ -448,60 +452,56 @@
 
 
 <body>
+
   <div class="return">
     <a href="/publications" style="height: 30px;">
-      <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-        width="30" height="30" fill="none" viewBox="0 0 24 24">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="m15 19-7-7 7-7" />
-      </svg>
+        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            width="30" height="30" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m15 19-7-7 7-7" />
+        </svg>
     </a>
     <h1>Panel de usuario</h1>
     <div></div>
-  </div>
+</div>
 
-  <div class="AccountContainer">
+<div class="AccountContainer">
 
     <!-- CUENTA-->
 
     <div class="sectionAccount">
-      <h2>Configuración de la cuenta</h2>
+        <h2>Configuración de la cuenta</h2>
     </div>
 
     <div class="sectionDetails">
-      <div class="actualData" id="loadingSkeleton">
-        <div class="loadingBox"></div>
-        <div class="loadingBox"></div>
-      </div>
-      <div class="actualData" id="dataAccount" style="display: none;">
-        <p style="font-weight:bolder;" id="name"></p>
-        <p id="email"></p>
-      </div>
+        <div class="actualData" id="loadingSkeleton">
+            <div class="loadingBox"></div>
+            <div class="loadingBox"></div>
+        </div>
+        <div class="actualData" id="dataAccount" style="display: none;">
+            <p style="font-weight:bolder;" id="name"></p>
+            <p id="email"></p>
+        </div>
     </div>
 
     <div class="sectionDetails">
-      <div class="pDetails">
-        <p style="font-weight:bolder;">Nombre</p>
-        <p>Cambiar nombre de usuario</p>
-      </div>
-      <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-        width="24" height="24" fill="none" viewBox="0 0 24 24">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
-      </svg>
+        <div class="pDetails">
+            <p style="font-weight:bolder;">Nombre</p>
+            <p class="pSecundary">Cambiar nombre de usuario</p>
+        </div>
+        <svg id="showEditName" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m19 9-7 7-7-7" />
+        </svg>
     </div>
 
 
 
 
-
-
-    <div class="sectionDetails" id="triggerElement">
-      <p>Este es el elemento de desencadenamiento</p>
-    </div>
-
-    <div class="additionalContent" id="additionalContent">
-      <p>Este es el contenido adicional que aparecerá debajo del elemento de desencadenamiento.</p>
-    </div>
+<div class="additionalContent" id="additionalContent">
+    <p>Este es el contenido adicional que aparecerá debajo del elemento de desencadenamiento.</p>
+</div>
 
 
 
@@ -515,34 +515,36 @@
 
 
 
-
+    
 
     <div class="sectionDetails">
-      <div class="pDetails">
-        <p style="font-weight:bolder;">Correo</p>
-        <p>Restablecer correo</p>
-      </div>
-      <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-        width="24" height="24" fill="none" viewBox="0 0 24 24">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7" />
-      </svg>
+        <div class="pDetails">
+            <p style="font-weight:bolder;">Correo</p>
+            <p class="pSecundary">Restablecer correo</p>
+        </div>
+        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m9 5 7 7-7 7" />
+        </svg>
     </div>
 
     <div class="sectionDetails">
-      <div class="pDetails">
-        <p style="font-weight:bolder;">Contraseña</p>
-        <p>Restablecer contaseña</p>
-      </div>
-      <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-        width="24" height="24" fill="none" viewBox="0 0 24 24">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7" />
-      </svg>
+        <div class="pDetails">
+            <p style="font-weight:bolder;">Contraseña</p>
+            <p class="pSecundary">Restablecer contaseña</p>
+        </div>
+        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m9 5 7 7-7 7" />
+        </svg>
     </div>
 
     <!-- SELLER -->
 
     <div class="sectionAccount">
-      <h2>Perfil Seller</h2>
+        <h2>Perfil Seller</h2>
 
     </div>
 
@@ -552,17 +554,18 @@
 
     <div class="sectionDetails">
 
-      <div id="btnsEditarPerfil">
-      </div>
+        <div id="btnsEditarPerfil">
+        </div>
 
-      <div class="pDetails">
-        <p style="font-weight:bolder;">Correo</p>
-        <p>Restablecer correo</p>
-      </div>
-      <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-        width="24" height="24" fill="none" viewBox="0 0 24 24">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7" />
-      </svg>
+        <div class="pDetails">
+            <p style="font-weight:bolder;">Correo</p>
+            <p>Restablecer correo</p>
+        </div>
+        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m9 5 7 7-7 7" />
+        </svg>
     </div>
 
 
@@ -578,7 +581,7 @@
 -->
 
 
-  </div>
+</div>
 
 
 
