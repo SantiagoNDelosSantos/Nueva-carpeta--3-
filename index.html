@@ -316,27 +316,25 @@
     color: #757575;
     font-size: 1em;
   }
-
   .return {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    ;
     flex-direction: row;
     align-items: center;
     padding: 4%;
     border-bottom: 1px solid #f3f3f3;
-  }
+}
 
-  a:hover {
+a:hover {
     color: black;
-  }
+}
 
-  h2 {
+h2 {
     font-weight: 400
-  }
+}
 
-  .AccountContainer {
+.AccountContainer {
     /* Configuración del display flex */
     display: flex;
     flex-direction: column;
@@ -345,9 +343,9 @@
     /* Medidas y posicion del contenedor*/
     width: 100%;
     height: auto;
-  }
+}
 
-  .sectionAccount {
+.sectionAccount {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -355,20 +353,30 @@
     align-items: flex-start;
     padding: 4%;
     background: #f3f3f3;
-  }
+}
 
-  .sectionDetails {
+.sectionDetails {
     width: 100%;
+    background: white;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 4%;
-    border-bottom: 1px solid #f3f3f3;
-  }
+    border-bottom: 2px solid #f3f3f3;
+    position: relative;
+}
 
-  /* Efecto de carga */
-  .loadingBox {
+.pDetails {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.4em;
+}
+
+/* Efecto de carga */
+.loadingBox {
     width: 100%;
     height: 1.21em;
     background-color: #f3f3f3;
@@ -377,16 +385,16 @@
     border-radius: 5px;
     background-size: 200% 100%;
     animation: 1.5s shine linear infinite;
-  }
+}
 
-  @keyframes shine {
+@keyframes shine {
     to {
-      background-position-x: -200%;
+        background-position-x: -200%;
     }
-  }
+}
 
-  /* Div para el correo y el name */
-  .actualData {
+/* Div para el correo y el name */
+.actualData {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -396,41 +404,48 @@
     gap: 0.4em;
     border-radius: 0.5em;
     border: 2px solid #f3f3f3;
-  }
+}
 
-
-
-
-  .additionalContent {
-    display: none;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out, margin-top 0.5s ease-out;
-    margin-top: -10px;
-    /* Margen superior negativo para ocultar el contenido */
-  }
-
-  .show {
-    display: block;
-    max-height: 1000px;
-    /* Ajusta esta altura según sea necesario */
-    margin-top: 10px;
-    /* Margen superior positivo para mostrar el contenido */
-  }
-
-
-
-
-  .pSecundary{
+.pSecundary {
     color: gray;
     font-size: 0.9em;
+}
+
+/* SVG HVER SOLO PARA PANEL DE USUARIO */
+svg:hover {
+    background: #ECECEC;
+    border-radius: 50%;
+    padding: 0.1em;
+}
+
+/* EDITAR NOMBRE CONTAINER: */
+#editNameContent {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+}
+
+#changeNameForm {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    height: auto;
+    border-bottom: 2px solid #f3f3f3;
+    padding: 5% 4%;
+}
+
+.botonText {
+    width: 50%;
 }
 
 
 
 
 
-  /* LOADER CON UNA PUNTA FINA 
+/* LOADER CON UNA PUNTA FINA 
 #loader {
     border: 3px solid #009FF5;
     border-top: 4px solid transparent;
@@ -439,19 +454,12 @@
     height: 2em;
 }
 */
-
-  .pDetails {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.4em;
-  }
 </style>
 
 
 
 <body>
+
 
   <div class="return">
     <a href="/publications" style="height: 30px;">
@@ -470,8 +478,10 @@
     <!-- CUENTA-->
 
     <div class="sectionAccount">
-        <h2>Configuración de la cuenta</h2>
+        <h2>Configuración de cuenta</h2>
     </div>
+
+    <!-- DATOS ACTUALES -->
 
     <div class="sectionDetails">
         <div class="actualData" id="loadingSkeleton">
@@ -484,49 +494,52 @@
         </div>
     </div>
 
+    <!-- CAMBIAR NOMBRE DE USUARIO -->
+
     <div class="sectionDetails">
         <div class="pDetails">
             <p style="font-weight:bolder;">Nombre</p>
             <p class="pSecundary">Cambiar nombre de usuario</p>
         </div>
-        <svg id="showEditName" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-            width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <svg id="showEditName" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="m19 9-7 7-7-7" />
         </svg>
     </div>
 
+    <div id="editNameContent">
+        <form id="changeNameForm">
+            <div class="input__wrapper">
+                <input type="text" name="first_name" id="first_name" class="input__field" placeholder="Nuevo nombre"
+                    required>
+                <label for="first_name" class="input__label">Nuevo nombre</label>
+            </div>
+            <input id="changebtn1" style="display: block;" class="botonText" type="submit" value="Actualizar">
+            <div id="changebtn2" class="botonText" style="display: none; background-color: #009FF5;">
+                <div style="display: flex; align-items: center; justify-content:center; height: 19.340px !important;">
+                    <div id="loader"></div>
+                </div>
+            </div>
+        </form>
+    </div>
 
 
 
-<div class="additionalContent" id="additionalContent">
-    <p>Este es el contenido adicional que aparecerá debajo del elemento de desencadenamiento.</p>
-</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-    
 
     <div class="sectionDetails">
         <div class="pDetails">
             <p style="font-weight:bolder;">Correo</p>
             <p class="pSecundary">Restablecer correo</p>
         </div>
-        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-            width="24" height="24" fill="none" viewBox="0 0 24 24">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="m9 5 7 7-7 7" />
-        </svg>
+        <a href="/resetEmail01" style="height: 30px;">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="m9 5 7 7-7 7" />
+            </svg>
+        </a>
     </div>
 
     <div class="sectionDetails">
@@ -534,58 +547,80 @@
             <p style="font-weight:bolder;">Contraseña</p>
             <p class="pSecundary">Restablecer contaseña</p>
         </div>
-        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-            width="24" height="24" fill="none" viewBox="0 0 24 24">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="m9 5 7 7-7 7" />
-        </svg>
+        <a href="/resetPass01" style="height: 30px;">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="m9 5 7 7-7 7" />
+            </svg>
+        </a>
     </div>
+
+
+
 
     <!-- SELLER -->
 
     <div class="sectionAccount">
         <h2>Perfil Seller</h2>
-
     </div>
-
 
 
 
 
     <div class="sectionDetails">
-
-        <div id="btnsEditarPerfil">
-        </div>
-
         <div class="pDetails">
-            <p style="font-weight:bolder;">Correo</p>
-            <p>Restablecer correo</p>
+            <p style="font-weight:bolder;">Contraseña</p>
+            <p class="pSecundary">Restablecer contaseña</p>
         </div>
-        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-            width="24" height="24" fill="none" viewBox="0 0 24 24">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="m9 5 7 7-7 7" />
-        </svg>
+        <a href="/resetPass01" style="height: 30px;">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="m9 5 7 7-7 7" />
+            </svg>
+        </a>
     </div>
 
 
-    <!--
-    <h2 style="color: rgb(184, 7, 7);">
-        Cerrar sesión
-    </h2>
+    <div class="sectionAccount">
+        <h2>Gestión de cuenta</h2>
+    </div>
 
-    <h2 style="color: rgb(184, 7, 7);">
-        Eliminar cuenta
-    </h2>
 
--->
+    <div class="sectionDetails">
+        <div class="pDetails">
+            <p style="font-weight:bolder;">Cerrar sesión</p>
+        </div>
+        <svg id="logout" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2" />
+        </svg>
+    </div>
 
+    <div class="sectionDetails">
+        <div class="pDetails">
+            <p style="font-weight:bolder; color: rgb(184, 7, 7);">Eliminar cuenta</p>
+        </div>
+        <svg id="deleteAccount" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="rgb(184, 7, 7)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z" />
+        </svg>
+
+    </div>
+
+</div>
+
+
+ <!--
 
 </div>
 
 
 
-  <!--
+ 
 
     <div class="SessionContainer">
         <img src="https://i.ibb.co/GHkynYS/Logo-LMU.png" alt="Logo-BK-Grande" class="logo">
@@ -795,6 +830,30 @@
     });
 
 
+/* BOTON QUE ACTIVA EL DESPLIEGUE */
+const showEditName = document.getElementById('showEditName')
+
+/* CONTENIDO QUE SE DESPLIEGA OSEA EL FORMULARIO */
+const editNameContent = document.getElementById('editNameContent');
+const changeNameForm = document.getElementById('changeNameForm')
+let dropdown1Active = false
+
+// Altura del contendor
+let altura = editNameContent.scrollHeight
+showEditName.addEventListener('click', function (e) {
+    e.preventDefault()
+    if (!dropdown1Active) {
+        showEditName.innerHTML = `<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7" />`;
+        dropdown1Active = true;
+        editNameContent.style.transition = 'max-height 1s ease'
+        editNameContent.style.maxHeight = altura + 'em';
+    } else {
+        showEditName.innerHTML = `<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />`;
+        dropdown1Active = false;
+        editNameContent.style.transition = 'max-height 0.3s ease'
+        editNameContent.style.maxHeight = null
+    }
+})
 
   </script>
 
