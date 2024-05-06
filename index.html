@@ -183,7 +183,7 @@ gap: 3em;">
 
 
         // SweetAlert2 viene con 5 íconos incorporados que mostrarán la animación del ícono correspondiente: warning, error, success, info, and question
-       
+
 
         const ToastC = Swal.mixin({
             // Color del background del Toast.
@@ -231,6 +231,22 @@ gap: 3em;">
             },
         });
 
+
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 5000,
+            timerProgressBar: true,
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutRight', // Animación de salida
+            }
+        });
+
+        Toast.fire({
+            icon: 'success',
+            title: 'Toast con animación personalizada'
+        });
 
 
 
@@ -318,9 +334,12 @@ gap: 3em;">
                 toast: true,
                 position: 'top-end',
                 showConfirmButton: false,
-                timer: 50000000,
+                timer: 5000,
                 title: 'Título del toast',
-                icon: 'success'
+                icon: 'success',
+                hideClass: {
+                popup: 'animate__animated animate__fadeOutRight', // Animación de salida
+            }
             });
         });
 
