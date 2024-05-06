@@ -179,8 +179,8 @@ gap: 3em;">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-        
-        const ToastC = Swal.mixin({
+        // Alerts con icono celeste: 
+        const SwalBlue = Swal.mixin({
             // Color del background del Toast.
             background: '#FFFFFF',
             // El ancho se puede fijar acá.
@@ -203,7 +203,7 @@ gap: 3em;">
         });
 
         // Alert para ERROR, WARNING
-        const ToastR = Swal.mixin({
+        const SwalRed = Swal.mixin({
             // Color del background del Toast.
             background: '#FFFFFF',
             // El ancho se puede fijar acá.
@@ -229,7 +229,7 @@ gap: 3em;">
 
         // Sweet alert para error (401, 500, Catch)
         document.getElementById('btn401').addEventListener('click', function () {
-            ToastR.fire({
+            SwalRed.fire({
                 icon: 'error',
                 showCloseButton: true,
                 showCloseButtonFocus: false,
@@ -241,7 +241,7 @@ gap: 3em;">
 
         // Sweet alert para los warning, ni succes, ni error (Todo entre 401 y 500).
         document.getElementById('btn400404').addEventListener('click', function () {
-            ToastR.fire({
+            SwalRed.fire({
                 icon: 'warning',
                 showCloseButton: true,
                 showCloseButtonFocus: false,
@@ -253,7 +253,7 @@ gap: 3em;">
 
         // Sweet alert para success: 
         document.getElementById('btnSuccess').addEventListener('click', function () {
-            ToastC.fire({
+            SwalBlue.fire({
                 icon: 'success',
                 showCloseButton: true,
                 showCloseButtonFocus: false,
@@ -265,7 +265,7 @@ gap: 3em;">
 
         // Confirmación tranqui. (EL ¡ es informativo por lo que deberia agregar en el text alguna descripción acorde a donde lo lance, en este caso menciono beneficios de ser premium)
         document.getElementById('btnInfo').addEventListener('click', function () {
-            ToastC.fire({
+            SwalBlue.fire({
                 titleText: 'Confirmar cambio de role',
                 text: '¿Deseas actualizar a "Premium"? Los usuarios premium pueden publicar, editar y eliminar productos, aunque el administrador puede eliminar contenido que incumpla nuestras políticas. ¿Confirmas el cambio?',
                 icon: 'info',
@@ -282,7 +282,7 @@ gap: 3em;">
 
         // Confirmación dañina/peligrosa.
         document.getElementById('btnConfirm').addEventListener('click', function () {
-            ToastR.fire({
+            SwalRed.fire({
                 titleText: 'Confirmar cierre de sesión',
                 text: '¿Estás seguro de que deseas cerrar tu sesión?',
                 icon: 'warning',
@@ -299,7 +299,7 @@ gap: 3em;">
 
         /* Toast success, si hay errores no usamos el toast porque es mejor mostrar los errores en el sweet alert grande nomas*/
         document.getElementById('btnToast').addEventListener('click', function () {
-            ToastC.fire({
+            SwalBlue.fire({
                 toast: true,
                 position: 'top-end',
                 showConfirmButton: false,
