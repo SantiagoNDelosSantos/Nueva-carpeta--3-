@@ -90,34 +90,9 @@
             border-radius: 1em;
         }
 
-        /* Estilos y hover para el boton de confirmar (OK. Sí, confirmar) */
-        .swal2-styled.swal2-confirm {
-            background-color: #ffffff;
-            color: #1298EA;
-            border: 0.20em solid #1298EA;
-        }
-
-        .swal2-styled.swal2-confirm:hover {
-            background-color: #1298EA;
-            color: #ffffff;
-        }
-
         /* Con esto le sacamos una sombra tipo neomorfismo que tienen los botones al activarse el hover, como profundidad: */
         div:where(.swal2-actions):not(.swal2-loading) .swal2-styled:hover {
             background-image: none !important;
-        }
-
-        /* Estilos y hover para el boton de CANCELAR */
-
-        .swal2-styled.swal2-cancel {
-            background-color: #ffffff;
-            color: #000000;
-            border: 0.20em solid #000000;
-        }
-
-        .swal2-styled.swal2-cancel:hover {
-            background-color: #000000;
-            color: #ffffff;
         }
 
         /* Esto es para sacarle ese focus asqueroso que aparece por defecto en los botones al cargarse el Sweet alert: */
@@ -204,11 +179,7 @@ gap: 3em;">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-
-
-        // SweetAlert2 viene con 5 íconos incorporados que mostrarán la animación del ícono correspondiente: warning, error, success, info, and question
-
-
+        
         const ToastC = Swal.mixin({
             // Color del background del Toast.
             background: '#FFFFFF',
@@ -230,7 +201,6 @@ gap: 3em;">
                 icon: 'swal2-icon-hide'
             },
         });
-
 
         // Alert para ERROR, WARNING
         const ToastR = Swal.mixin({
@@ -257,25 +227,6 @@ gap: 3em;">
             },
         });
 
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 5000,
-            timerProgressBar: true,
-            hideClass: {
-                popup: 'animate__animated animate__fadeOutRight', // Animación de salida
-            }
-        });
-
-        /*
-        Toast.fire({
-            icon: 'success',
-            title: 'Toast con animación personalizada'
-        });
-*/
-
-
         // Sweet alert para error (401, 500, Catch)
         document.getElementById('btn401').addEventListener('click', function () {
             ToastR.fire({
@@ -285,6 +236,18 @@ gap: 3em;">
                 showConfirmButton: false,
                 titleText: 'Error al buscar tu cuenta de usuario',
                 text: 'Mensaje de error para el código 401, 500, Catch'
+            });
+        });
+
+        // Sweet alert para los warning, ni succes, ni error (Todo entre 401 y 500).
+        document.getElementById('btn400404').addEventListener('click', function () {
+            ToastR.fire({
+                icon: 'warning',
+                showCloseButton: true,
+                showCloseButtonFocus: false,
+                showConfirmButton: false,
+                titleText: 'Error al buscar tu cuenta de usuario',
+                text: 'Mensaje de advertencia para los códigos 400 y 404'
             });
         });
 
@@ -300,20 +263,7 @@ gap: 3em;">
             });
         });
 
-
-        // Sweet alert para los warning, ni succes, ni error (Todo entre 401 y 500).
-        document.getElementById('btn400404').addEventListener('click', function () {
-            ToastR.fire({
-                icon: 'warning',
-                showCloseButton: true,
-                showCloseButtonFocus: false,
-                showConfirmButton: false,
-                titleText: 'Error al buscar tu cuenta de usuario',
-                text: 'Mensaje de advertencia para los códigos 400 y 404'
-            });
-        });
-
-        // Confirmación tranqui.
+        // Confirmación tranqui. (EL ¡ es informativo por lo que deberia agregar en el text alguna descripción acorde a donde lo lance, en este caso menciono beneficios de ser premium)
         document.getElementById('btnInfo').addEventListener('click', function () {
             ToastC.fire({
                 titleText: 'Confirmar cambio de role',
@@ -323,7 +273,9 @@ gap: 3em;">
                 showCloseButtonFocus: false,
                 showCancelButton: true,
                 cancelButtonText: 'Cancelar',
+                cancelButtonColor: '#000000',
                 confirmButtonText: 'Confirmar',
+                confirmButtonColor: '#1298EA',
                 reverseButtons: true
             });
         });
@@ -338,13 +290,14 @@ gap: 3em;">
                 showCloseButtonFocus: false,
                 showCancelButton: true,
                 cancelButtonText: 'Cancelar',
+                cancelButtonColor: '#000000',
                 confirmButtonText: 'Confirmar',
+                confirmButtonColor: '#E23237',
                 reverseButtons: true
             });
         });
 
-
-
+        /* Toast success, si hay errores no usamos el toast porque es mejor mostrar los errores en el sweet alert grande nomas*/
         document.getElementById('btnToast').addEventListener('click', function () {
             ToastC.fire({
                 toast: true,
