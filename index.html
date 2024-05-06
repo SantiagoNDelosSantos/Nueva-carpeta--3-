@@ -34,6 +34,7 @@
 
 
         /* Sweet Alert*/
+        /* Bordes redondeados y border-bottom lineramente mas gris*/
         .swal2-popup.swal2-modal.swal2-icon-success.swal2-show,
         .swal2-popup.swal2-modal.swal2-icon-error.swal2-show,
         .swal2-popup.swal2-modal.swal2-icon-info.swal2-show,
@@ -41,10 +42,7 @@
         .swal2-popup.swal2-toast,
         .swal2-container.swal2-center>.swal2-popup {
             border-radius: 1.5em !important;
-            backdrop-filter: blur(6px) !important;
-            background: rgb(255, 255, 255) !important;
-            border-bottom: 0.1em solid rgba(174, 173, 173, 0.78) !important;
-            width: 92%;
+            border-bottom: 0.1em solid gray!important;
         }
 
         .swal2-popup.swal2-toast {
@@ -196,20 +194,22 @@
                 transform: scale(0.7);
                 opacity: 0;
             }
+
             100% {
                 transform: scale(1);
-                opacity: 1; 
+                opacity: 1;
             }
         }
 
         @keyframes custom-swal2-hide {
             0% {
                 transform: scale(1);
-                opacity: 1; 
+                opacity: 1;
             }
+
             100% {
                 transform: scale(0.7);
-                opacity: 0; 
+                opacity: 0;
             }
 
         }
@@ -228,6 +228,7 @@
     </style>
 </head>
 
+
 <body>
     <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;
 gap: 3em;">
@@ -245,10 +246,15 @@ gap: 3em;">
 
     <script>
 
-        const Toast = Swal.mixin({
+        const ToastC = Swal.mixin({
+            // Color del background del Toast.
+            background: '#FFFFFF',
+            // El ancho se puede fijar acá.
+            width: '92%',
+            color: '#000000',
             iconColor: '#1298EA',
-            allowOutsideClick: false,
 
+            allowOutsideClick: false,
             showClass: {
                 popup: 'custom-swal2-show',
                 backdrop: 'swal2-backdrop-show',
@@ -258,21 +264,69 @@ gap: 3em;">
                 popup: 'custom-swal2-hide',
                 backdrop: 'swal2-backdrop-hide',
                 icon: 'swal2-icon-hide'
-            }
+            },
+            confirmButtonColor: '#1298EA',
+
+            /* cancelButtonColor
+             denyButtonColor
+             focusConfirm:false,
+             focusDeny: false,
+             focusCancel: false,
+ 
+ 
+             SweetAlert2 viene con 5 íconos incorporados que mostrarán la animación del ícono correspondiente: warning, error, success, info, and question
+ */
+        });
+
+        const ToastR = Swal.mixin({
+            // Color del background del Toast.
+            background: '#FFFFFF',
+            // El ancho se puede fijar acá.
+            width: '92%',
+            color: '#000000',
+            iconColor: '#E23237',
+
+            allowOutsideClick: false,
+            showClass: {
+                popup: 'custom-swal2-show',
+                backdrop: 'swal2-backdrop-show',
+                icon: 'swal2-icon-show'
+            },
+            hideClass: {
+                popup: 'custom-swal2-hide',
+                backdrop: 'swal2-backdrop-hide',
+                icon: 'swal2-icon-hide'
+            },
+            confirmButtonColor: '#1298EA',
+
+            /* cancelButtonColor
+             denyButtonColor
+             focusConfirm:false,
+             focusDeny: false,
+             focusCancel: false,
+ 
+ 
+             SweetAlert2 viene con 5 íconos incorporados que mostrarán la animación del ícono correspondiente: warning, error, success, info, and question
+      reverseButtons       
+ */
+
+
         });
 
 
+
+
         document.getElementById('btn401').addEventListener('click', function () {
-            Toast.fire({
+            ToastR.fire({
                 icon: 'error',
                 // CAMBIAR EL COLOR DEL ICONO ES ALGO QUE SE PUEDE HACER DESDE UNA ETIQUETA EN EL SWEET ALERT
-                title: 'Error al buscar tu cuenta de usuario',
+                titleText: 'Error al buscar tu cuenta de usuario',
                 text: 'Mensaje de error para el código 401'
             });
         });
 
         document.getElementById('btnSuccess').addEventListener('click', function () {
-            Toast.fire({
+            ToastC.fire({
                 icon: 'success',
                 title: 'Cambiar nombre de usuario',
                 text: 'Mensaje de éxito para cambiar el nombre de usuario',
@@ -304,24 +358,26 @@ gap: 3em;">
         });
 
         document.getElementById('btnConfirm').addEventListener('click', function () {
-            Toast.fire({
+            ToastR.fire({
                 title: 'Confirmar cierre de sesión',
                 text: '¿Estás seguro de que deseas cerrar tu sesión?',
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Sí, confirmar',
                 cancelButtonText: 'Cancelar',
+                reverseButtons: true
             });
         });
 
         document.getElementById('btnInfo').addEventListener('click', function () {
-            Toast.fire({
+            ToastC.fire({
                 title: 'Confirmar cambio de role',
                 text: '¿Deseas actualizar a "Premium"? Los usuarios premium pueden publicar, editar y eliminar productos, aunque el administrador puede eliminar contenido que incumpla nuestras políticas. ¿Confirmas el cambio?',
                 icon: 'info',
                 showCancelButton: true,
                 confirmButtonText: 'Sí, confirmar',
                 cancelButtonText: 'Cancelar',
+                reverseButtons: true
             });
         });
 
