@@ -188,128 +188,133 @@
         }
 
         .return {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
-    padding: 4%;
-    border-bottom: 1px solid #f3f3f3;
-}
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+            padding: 4%;
+            border-bottom: 1px solid #f3f3f3;
+        }
 
-a:hover {
-    color: black;
-}
+        a:hover {
+            color: black;
+        }
 
-h2 {
-    font-weight: 400
-}
+        h2 {
+            font-weight: 400
+        }
 
-.AccountContainer {
-    /* Configuración del display flex */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    /* Medidas y posicion del contenedor*/
-    width: 100%;
-    height: auto;
-}
+        .AccountContainer {
+            /* Configuración del display flex */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            /* Medidas y posicion del contenedor*/
+            width: 100%;
+            height: auto;
+        }
 
-.sectionAccount {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 4%;
-    background: #f3f3f3;
-}
+        .sectionAccount {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 4%;
+            background: #f3f3f3;
+        }
 
-.sectionDetails {
-    width: 100%;
-    background: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4%;
-    border-bottom: 2px solid #f3f3f3;
-    position: relative;
-}
+        .sectionDetails {
+            width: 100%;
+            background: white;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4%;
+            border-bottom: 2px solid #f3f3f3;
+            position: relative;
+        }
 
-.pDetails {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.4em;
-}
+        .pDetails {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 0.4em;
+        }
 
-/* Efecto de carga */
-.loadingBox {
-    width: 100%;
-    height: 1.21em;
-    background-color: #f3f3f3;
-    background: #eee;
-    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
-    border-radius: 5px;
-    background-size: 200% 100%;
-    animation: 1.5s shine linear infinite;
-}
+        /* Efecto de carga */
+        .loadingBox {
+            width: 100%;
+            height: 1.21em;
+            background-color: #f3f3f3;
+            background: #eee;
+            background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+            border-radius: 5px;
+            background-size: 200% 100%;
+            animation: 1.5s shine linear infinite;
+        }
 
-@keyframes shine {
-    to {
-        background-position-x: -200%;
-    }
-}
+        @keyframes shine {
+            to {
+                background-position-x: -200%;
+            }
+        }
 
-/* Div para el correo y el name */
-.actualData {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 4%;
-    gap: 0.4em;
-    border-radius: 0.5em;
-    border: 2px solid #f3f3f3;
-}
+        /* Div para el correo y el name */
+        .actualData {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4%;
+            gap: 0.4em;
+            border-radius: 0.5em;
+            border: 2px solid #f3f3f3;
+        }
 
-.pSecundary {
-    color: gray;
-    font-size: 0.9em;
-}
-
-
-/* EDITAR NOMBRE CONTAINER: */
-.editName-Content {
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    height: auto;
-}
-
-#changeNameForm {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1em;
-    height: auto;
-    border-bottom: 2px solid #f3f3f3;
-    padding: 5% 4%;
-}
-
-.botonText {
-    width: 10em !important;
-}
+        .pSecundary {
+            color: gray;
+            font-size: 0.9em;
+        }
 
 
+        /* EDITAR NOMBRE CONTAINER: */
+        .editName-Content {
+            width: 100%;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            height: auto;
+        }
 
+        #changeNameForm {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1em;
+            height: auto;
+            border-bottom: 2px solid #f3f3f3;
+            padding: 5% 4%;
+        }
+
+        .botonText {
+            width: 10em !important;
+        }
+
+        .botonText:focus,
+        svg:focus {
+            outline: none;
+            /* Elimina el contorno predeterminado al enfocar */
+            box-shadow: none;
+            /* Elimina la sombra al enfocar */
+        }
 
     </style>
 </head>
@@ -327,17 +332,17 @@ h2 {
         <h1>Panel de usuario</h1>
         <div></div>
     </div>
-    
+
     <div class="AccountContainer">
-    
+
         <!-- CUENTA-->
-    
+
         <div class="sectionAccount">
             <h2>Configuración de cuenta</h2>
         </div>
-    
+
         <!-- DATOS ACTUALES -->
-    
+
         <div class="sectionDetails">
             <div class="actualData" id="loadingSkeleton">
                 <div class="loadingBox"></div>
@@ -348,9 +353,9 @@ h2 {
                 <p id="email"></p>
             </div>
         </div>
-    
+
         <!-- CAMBIAR NOMBRE DE USUARIO -->
-    
+
         <div class="sectionDetails">
             <div class="pDetails">
                 <p style="font-weight:bolder;">Nombre</p>
@@ -362,7 +367,7 @@ h2 {
                     d="m19 9-7 7-7-7" />
             </svg>
         </div>
-        
+
         <div id="editNameContent" class="editName-Content">
             <form id="changeNameForm">
                 <div class="input__wrapper">
@@ -370,17 +375,18 @@ h2 {
                         required>
                     <label for="first_name" class="input__label">Nuevo nombre</label>
                 </div>
-    
+
                 <input id="changebtn1" style="display: block;" class="botonText" type="submit" value="Actualizar">
-    
+
                 <div id="changebtn2" class="botonText" style="display: none; background-color: #009FF5;">
-                    <div style="display: flex; align-items: center; justify-content:center; height: 19.340px !important;">
+                    <div
+                        style="display: flex; align-items: center; justify-content:center; height: 19.340px !important;">
                         <div id="loader"></div>
                     </div>
                 </div>
             </form>
         </div>
-    
+
         <div class="sectionDetails">
             <div class="pDetails">
                 <p style="font-weight:bolder;">Correo</p>
@@ -394,7 +400,7 @@ h2 {
                 </svg>
             </a>
         </div>
-    
+
         <div class="sectionDetails">
             <div class="pDetails">
                 <p style="font-weight:bolder;">Contraseña</p>
@@ -408,19 +414,19 @@ h2 {
                 </svg>
             </a>
         </div>
-    
-    
-    
-    
+
+
+
+
         <!-- SELLER -->
-    
+
         <div class="sectionAccount">
             <h2>Perfil Seller</h2>
         </div>
-    
-    
-    
-    
+
+
+
+
         <div class="sectionDetails">
             <div class="pDetails">
                 <p style="font-weight:bolder;">Contraseña</p>
@@ -434,13 +440,13 @@ h2 {
                 </svg>
             </a>
         </div>
-    
-    
+
+
         <div class="sectionAccount">
             <h2>Gestión de cuenta</h2>
         </div>
-    
-    
+
+
         <div class="sectionDetails">
             <div class="pDetails">
                 <p style="font-weight:bolder;">Cerrar sesión</p>
@@ -451,7 +457,7 @@ h2 {
                     d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2" />
             </svg>
         </div>
-    
+
         <div class="sectionDetails">
             <div class="pDetails">
                 <p style="font-weight:bolder; color: rgb(184, 7, 7);">Eliminar cuenta</p>
@@ -461,39 +467,39 @@ h2 {
                 <path stroke="rgb(184, 7, 7)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z" />
             </svg>
-    
+
         </div>
-    
+
     </div>
 
 
     <script>
 
 
-      
 
-/* BOTON QUE ACTIVA EL DESPLIEGUE */
-const showEditName = document.getElementById('showEditName')
 
-/* CONTENIDO QUE SE DESPLIEGA OSEA EL CONTENEDOR DEL FORMULARIO */
-const editNameContent = document.getElementById('editNameContent');
+        /* BOTON QUE ACTIVA EL DESPLIEGUE */
+        const showEditName = document.getElementById('showEditName')
 
-let dropdown1Active = false
+        /* CONTENIDO QUE SE DESPLIEGA OSEA EL CONTENEDOR DEL FORMULARIO */
+        const editNameContent = document.getElementById('editNameContent');
 
-// Altura del contendor
-let altura =  editNameContent.scrollHeight
-showEditName.addEventListener('click', function (e) {
-    e.preventDefault()
-    if (!dropdown1Active) {
-        editNameContent.style.maxHeight = altura + 'px';
-        showEditName.innerHTML = `<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7" />`;
-        dropdown1Active = true;
-    } else {
-        editNameContent.style.maxHeight = null
-        showEditName.innerHTML = `<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />`;
-        dropdown1Active = false;
-    }
-})
+        let dropdown1Active = false
+
+        // Altura del contendor
+        let altura = editNameContent.scrollHeight
+        showEditName.addEventListener('click', function (e) {
+            e.preventDefault()
+            if (!dropdown1Active) {
+                editNameContent.style.maxHeight = altura + 'px';
+                showEditName.innerHTML = `<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7" />`;
+                dropdown1Active = true;
+            } else {
+                editNameContent.style.maxHeight = null
+                showEditName.innerHTML = `<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />`;
+                dropdown1Active = false;
+            }
+        })
 
     </script>
 
