@@ -38,8 +38,8 @@
         .swal2-popup.swal2-modal.swal2-icon-error.swal2-show,
         .swal2-popup.swal2-modal.swal2-icon-info.swal2-show,
         .swal2-popup.swal2-modal.swal2-icon-warning.swal2-show,
-        .swal2-popup.swal2-toast,
-        .swal2-container.swal2-center>.swal2-popup {
+        .swal2-container.swal2-center>.swal2-popup,
+        .swal2-popup.swal2-toast {
             border-radius: 1.5em !important;
             border-bottom: 0.1em solid rgba(174, 173, 173, 0.78) !important;
         }
@@ -69,14 +69,19 @@
             overflow-y: auto;
         }
 
+        /* Para que no se rompa el contenedor del toast, uno cuando aparece, el otro al desaparecer */
+        .swal2-container.swal2-top-end.swal2-backdrop-show,
+        .swal2-container.swal2-top-end.swal2-backdrop-hide {
+            width: auto !important;
+        }
+
         /* Esto es basicamente para estar seguros de que el body del alert (El contendor principal) no tenga ningun padding raro y que este bien centrado */
         body.swal2-shown.swal2-height-auto {
             padding-right: 0 !important;
         }
 
-        /* Esto es para el ancho del Toast */
-        .swal2-container.swal2-top-end.swal2-backdrop-show {
-            width: auto !important;
+        .swal2-timer-progress-bar {
+            background-color: #1298EA;
         }
 
         /* Border radius para los botones */
@@ -176,6 +181,11 @@
             color: #E23237 !important;
             background: rgba(0, 0, 0, 0.1) !important;
         }
+
+        /* Gap entre Cancelar y Confirmar */
+        .swal2-actions {
+            gap: 2em;
+        }
     </style>
 </head>
 
@@ -183,13 +193,11 @@
 <body>
     <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;
 gap: 3em;">
-        <button id="btn401">Mostrar Alerta 401</button>
-        <button id="btnSuccess">Mostrar Alerta de Éxito</button>
-        <button id="btn400404">Mostrar Alerta 400/404</button>
-        <button id="btn500">Mostrar Alerta 500</button>
-        <button id="btnCatch">Mostrar Alerta de Catch</button>
-        <button id="btnConfirm">Mostrar Confirmación</button>
-        <button id="btnInfo">Mostrar Confirmación de Info</button>
+        <button id="btn401">Mostrar Alerta 401, 500, Catch</button>
+        <button id="btnSuccess">Mostrar Alerta de Éxito 200</button>
+        <button id="btn400404">Mostrar Alerta 400, 404</button>
+        <button id="btnInfo">Mostrar Confirmación de Info - Tranqui</button>
+        <button id="btnConfirm">Mostrar Confirmación - Destructiva</button>
         <button id="btnToast">Mostrar Toast</button>
     </div>
 
@@ -223,7 +231,8 @@ gap: 3em;">
             },
         });
 
-        // Alert para ERROR, 
+
+        // Alert para ERROR, WARNING
         const ToastR = Swal.mixin({
             // Color del background del Toast.
             background: '#FFFFFF',
@@ -248,7 +257,6 @@ gap: 3em;">
             },
         });
 
-
         const Toast = Swal.mixin({
             toast: true,
             position: 'top-end',
@@ -267,8 +275,8 @@ gap: 3em;">
         });
 */
 
- 
-        // Sweet alert para error, 
+
+        // Sweet alert para error (401, 500, Catch)
         document.getElementById('btn401').addEventListener('click', function () {
             ToastR.fire({
                 icon: 'error',
@@ -276,7 +284,7 @@ gap: 3em;">
                 showCloseButtonFocus: false,
                 showConfirmButton: false,
                 titleText: 'Error al buscar tu cuenta de usuario',
-                text: 'Mensaje de error para el código 401'
+                text: 'Mensaje de error para el código 401, 500, Catch'
             });
         });
 
@@ -287,86 +295,76 @@ gap: 3em;">
                 showCloseButton: true,
                 showCloseButtonFocus: false,
                 showConfirmButton: false,
-                title: 'Cambiar nombre de usuario',
+                titleText: 'Cambiar nombre de usuario',
                 text: 'Mensaje de éxito para cambiar el nombre de usuario',
             });
         });
 
+
+        // Sweet alert para los warning, ni succes, ni error (Todo entre 401 y 500).
         document.getElementById('btn400404').addEventListener('click', function () {
-            Toast.fire({
+            ToastR.fire({
                 icon: 'warning',
-                title: 'Error al buscar tu cuenta de usuario',
+                showCloseButton: true,
+                showCloseButtonFocus: false,
+                showConfirmButton: false,
+                titleText: 'Error al buscar tu cuenta de usuario',
                 text: 'Mensaje de advertencia para los códigos 400 y 404'
             });
         });
 
-        document.getElementById('btn500').addEventListener('click', function () {
-            Toast.fire({
-                icon: 'error',
-                title: 'Error al buscar tu cuenta de usuario',
-                text: 'Mensaje de error para el código 500'
-            });
-        });
-
-        document.getElementById('btnCatch').addEventListener('click', function () {
-            Toast.fire({
-                icon: 'error',
-                title: 'Error al cambiar nombre de usuario',
-                text: 'Ocurrió un error al procesar tu solicitud. Por favor, inténtalo de nuevo más tarde.'
-            });
-        });
-
-        document.getElementById('btnConfirm').addEventListener('click', function () {
-            ToastR.fire({
-                title: 'Confirmar cierre de sesión',
-                text: '¿Estás seguro de que deseas cerrar tu sesión?',
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonText: 'Sí, confirmar',
-                cancelButtonText: 'Cancelar',
-                reverseButtons: true
-            });
-        });
-
+        // Confirmación tranqui.
         document.getElementById('btnInfo').addEventListener('click', function () {
             ToastC.fire({
-                title: 'Confirmar cambio de role',
+                titleText: 'Confirmar cambio de role',
                 text: '¿Deseas actualizar a "Premium"? Los usuarios premium pueden publicar, editar y eliminar productos, aunque el administrador puede eliminar contenido que incumpla nuestras políticas. ¿Confirmas el cambio?',
                 icon: 'info',
+                showCloseButton: true,
+                showCloseButtonFocus: false,
                 showCancelButton: true,
-                confirmButtonText: 'Sí, confirmar',
                 cancelButtonText: 'Cancelar',
+                confirmButtonText: 'Confirmar',
+                reverseButtons: true
+            });
+        });
+
+        // Confirmación dañina/peligrosa.
+        document.getElementById('btnConfirm').addEventListener('click', function () {
+            ToastR.fire({
+                titleText: 'Confirmar cierre de sesión',
+                text: '¿Estás seguro de que deseas cerrar tu sesión?',
+                icon: 'warning',
+                showCloseButton: true,
+                showCloseButtonFocus: false,
+                showCancelButton: true,
+                cancelButtonText: 'Cancelar',
+                confirmButtonText: 'Confirmar',
                 reverseButtons: true
             });
         });
 
 
-
-        /*
-        Ex 401
-         Swal.fire({
-                    title: res.h1,
-                    text: res.message,
-                    imageUrl: res.img,
-                    imageWidth: 70,
-                    imageHeight: 70,
-                    imageAlt: res.h1,
-                });
-        */
 
         document.getElementById('btnToast').addEventListener('click', function () {
             ToastC.fire({
                 toast: true,
                 position: 'top-end',
                 showConfirmButton: false,
-                timer: 5000,
-                title: 'Título del toast',
+                timer: 3000,
+                titleText: 'Título del toast',
                 icon: 'success',
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                },
+                showClass: {
+                    popup: `custom-swal2-show`
+                },
                 hideClass: {
-                    popup: 'animate__animated animate__fadeOutRight', // Animación de salida
+                    popup: 'custom-swal2-hide'
                 }
             });
-        });
+        })
 
     </script>
 
