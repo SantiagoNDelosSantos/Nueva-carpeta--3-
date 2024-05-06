@@ -32,7 +32,6 @@
             margin: 0;
         }
 
-
         /* Sweet Alert*/
         /* Bordes redondeados y border-bottom lineramente mas gris*/
         .swal2-popup.swal2-modal.swal2-icon-success.swal2-show,
@@ -45,109 +44,78 @@
             border-bottom: 0.1em solid rgba(174, 173, 173, 0.78) !important;
         }
 
+        /* Margen hacia arriba en todos los iconos de las alerts */
+        .swal2-icon {
+            margin: 1.7em auto .6em;
+        }
+
+        /* Tamaño para el title de los alerts (El Toast tiene su size aparte, no es este). */
+        h2#swal2-title {
+            font-size: 1.3em !important;
+        }
+
+        /* Este es el tamaño de la fuente que este debajo de los title de los alerts. */
+        div:where(.swal2-container) .swal2-html-container {
+            font-size: 1em !important;
+        }
+
         /* Tamaño para el texto del toast */
         .swal2-popup.swal2-toast {
             font-size: 0.65em !important;
         }
 
-        /* Margen hacia arriba en el icono de las alerts */
-        .swal2-icon {
-            margin: 1.7em auto .6em;
-        }
-
-
-        button.swal2-cancel.swal2-styled {
-            border-radius: 2em;
-            backdrop-filter: blur(6px);
-            background-color: #ffffff00;
-        }
-
-        .swal2-popup.swal2-toast.swal2-icon-success.swal2-show {
-            padding: 0.2em;
-        }
-
+        /* Entiendo que agrega un scroll en caso de que el contenido no entre del todo en el alert*/
         .swal2-container.swal2-center.swal2-backdrop-show {
             overflow-y: auto;
-            background: #0000004b;
         }
 
-        h2#swal2-title {
-            color: black;
-            font-size: 1.3em !important;
-        }
-
-        div:where(.swal2-container) .swal2-html-container {
-            font-size: 1em !important;
-        }
-
-
-        div#swal2-html-container {
-            color: black;
-        }
-
-        .swal2-container.swal2-top-end.swal2-backdrop-show {
-            width: auto !important;
-        }
-
-        /*
-        .swal2-icon.swal2-warning,
-        .swal2-icon.swal2-error,
-        .swal2-icon.swal2-error [class^=swal2-x-mark-line],
-        .swal2-icon.swal2-info,
-        .swal2-icon.swal2-success,
-        .swal2-icon.swal2-success [class^=swal2-success-line] {
-            border-color: #7066e0 !important;
-            color: #7066e0 !important;
-        }
-
-     
-        .swal2-icon.swal2-error [class^=swal2-x-mark-line],
-        .swal2-icon.swal2-success [class^=swal2-success-line] {
-            background-color: #7066e0 !important;
-        }  
-        */
-
-        button.swal2-confirm.swal2-styled {
-            background-color: #ffffff00;
-        }
-
-        .swal2-success-circular-line-left,
-        .swal2-success-circular-line-right,
-        .swal2-success-fix {
-            background: none !important;
-        }
-
-        button.swal2-confirm.swal2-styled {
-            border-radius: 6em;
-        }
-
-        .swal2-styled.swal2-confirm {
-            background-color: #ffffff;
-            color: #7066e0;
-            border: 0.20em solid #7066e0;
-            ;
-        }
-
-        .swal2-styled.swal2-confirm:hover {
-            background-color: #7066e0;
-            color: #ffffff;
-        }
-
+        /* Esto es basicamente para estar seguros de que el body del alert (El contendor principal) no tenga ningun padding raro y que este bien centrado */
         body.swal2-shown.swal2-height-auto {
             padding-right: 0 !important;
         }
 
-        .swal2-styled.swal2-cancel {
-            background-color: #ffffff;
-            color: #9d9d9d;
-            border: 0.20em solid #9d9d9d;
+        /* Esto es para el ancho del Toast */
+        .swal2-container.swal2-top-end.swal2-backdrop-show {
+            width: auto !important;
         }
 
-        .swal2-styled.swal2-cancel:hover {
-            background-color: #9d9d9d;
+        /* Border radius para los botones */
+        button.swal2-confirm.swal2-styled,
+        button.swal2-cancel.swal2-styled {
+            border-radius: 1em;
+        }
+
+        /* Estilos y hover para el boton de confirmar (OK. Sí, confirmar) */
+        .swal2-styled.swal2-confirm {
+            background-color: #ffffff;
+            color: #1298EA;
+            border: 0.20em solid #1298EA;
+        }
+
+        .swal2-styled.swal2-confirm:hover {
+            background-color: #1298EA;
             color: #ffffff;
         }
 
+        /* Con esto le sacamos una sombra tipo neomorfismo que tienen los botones al activarse el hover, como profundidad: */
+        div:where(.swal2-actions):not(.swal2-loading) .swal2-styled:hover {
+            background-image: none !important;
+        }
+
+        /* Estilos y hover para el boton de CANCELAR */
+
+        .swal2-styled.swal2-cancel {
+            background-color: #ffffff;
+            color: #000000;
+            border: 0.20em solid #000000;
+        }
+
+        .swal2-styled.swal2-cancel:hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        /* Esto es para sacarle ese focus asqueroso que aparece por defecto en los botones al cargarse el Sweet alert: */
         .swal2-confirm:not([disabled]) {
             box-shadow: none !important;
             outline: none !important;
@@ -158,39 +126,7 @@
             outline: none !important;
         }
 
-        /* SWEET ALERT - EDITAR PRODUCTO: */
-        div:where(.swal2-container) .swal2-input {
-            height: 2em !important;
-            padding: 0 0.75em;
-            border-radius: 2em;
-            background: #EFEFEF;
-            width: 10em;
-        }
-
-        .swal2-input {
-            color: #000000;
-            font-size: 1em;
-        }
-
-        .swal2-input::placeholder {
-            color: #757575;
-            font-size: 1em;
-        }
-
-        /*  swal2-input*/
-
-        /*
-        .swal2-icon {
-            color: red !important;
-            border: 0.20em solid red !important;
-        }
-
-        #iconColor {
-            color: red !important;
-        }
-        */
-
-
+        /* Estas son las transiciones para cuando un alert aparacece y otra para cuando desaparece: */
         @keyframes custom-swal2-show {
             0% {
                 transform: scale(0.7);
@@ -213,19 +149,16 @@
                 transform: scale(0.7);
                 opacity: 0;
             }
-
         }
 
         .custom-swal2-show {
             animation-name: custom-swal2-show;
             animation-duration: 0.2s;
-            /* Duración de la animación: 1 segundo */
         }
 
         .custom-swal2-hide {
             animation-name: custom-swal2-hide;
             animation-duration: 0.2s;
-            /* Duración de la animación: 1 segundo */
         }
     </style>
 </head>
@@ -248,14 +181,19 @@ gap: 3em;">
 
     <script>
 
+
+        // SweetAlert2 viene con 5 íconos incorporados que mostrarán la animación del ícono correspondiente: warning, error, success, info, and question
+       
+
         const ToastC = Swal.mixin({
             // Color del background del Toast.
             background: '#FFFFFF',
             // El ancho se puede fijar acá.
             width: '92%',
+            /* Color de los textos (Negro): */
             color: '#000000',
             iconColor: '#1298EA',
-
+            /* Animación lineal */
             allowOutsideClick: false,
             showClass: {
                 popup: 'custom-swal2-show',
@@ -267,17 +205,6 @@ gap: 3em;">
                 backdrop: 'swal2-backdrop-hide',
                 icon: 'swal2-icon-hide'
             },
-            confirmButtonColor: '#1298EA',
-
-            /* cancelButtonColor
-             denyButtonColor
-             focusConfirm:false,
-             focusDeny: false,
-             focusCancel: false,
- 
- 
-             SweetAlert2 viene con 5 íconos incorporados que mostrarán la animación del ícono correspondiente: warning, error, success, info, and question
- */
         });
 
         const ToastR = Swal.mixin({
@@ -285,10 +212,13 @@ gap: 3em;">
             background: '#FFFFFF',
             // El ancho se puede fijar acá.
             width: '92%',
+            /* Color de los textos (Negro): */
             color: '#000000',
+            /* Color del icono*/
             iconColor: '#E23237',
-
+            /* Salir del alert clickeando afuera, deshabilitado */
             allowOutsideClick: false,
+            /* Animación lineal */
             showClass: {
                 popup: 'custom-swal2-show',
                 backdrop: 'swal2-backdrop-show',
@@ -299,20 +229,6 @@ gap: 3em;">
                 backdrop: 'swal2-backdrop-hide',
                 icon: 'swal2-icon-hide'
             },
-            confirmButtonColor: '#1298EA',
-
-            /* cancelButtonColor
-             denyButtonColor
-             focusConfirm:false,
-             focusDeny: false,
-             focusCancel: false,
- 
- 
-             SweetAlert2 viene con 5 íconos incorporados que mostrarán la animación del ícono correspondiente: warning, error, success, info, and question
-      reverseButtons       
- */
-
-
         });
 
 
@@ -402,7 +318,7 @@ gap: 3em;">
                 toast: true,
                 position: 'top-end',
                 showConfirmButton: false,
-                timer: 5000,
+                timer: 50000000,
                 title: 'Título del toast',
                 icon: 'success'
             });
