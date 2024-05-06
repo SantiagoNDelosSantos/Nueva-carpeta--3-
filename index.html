@@ -160,6 +160,22 @@
             animation-name: custom-swal2-hide;
             animation-duration: 0.2s;
         }
+
+        /* Botón X de cerrrar pestaña */
+        button.swal2-close {
+            box-shadow: none !important;
+            color: black !important;
+            border-top-right-radius: 0.5em;
+            background: rgba(0, 0, 0, 0.1);
+            border-bottom-left-radius: 0.5em;
+            border-top-left-radius: 0em;
+            border-bottom-right-radius: 0em;
+        }
+
+        div:where(.swal2-container) button:where(.swal2-close):hover {
+            color: #E23237 !important;
+            background: rgba(0, 0, 0, 0.1) !important;
+        }
     </style>
 </head>
 
@@ -207,6 +223,7 @@ gap: 3em;">
             },
         });
 
+        // Alert para ERROR, 
         const ToastR = Swal.mixin({
             // Color del background del Toast.
             background: '#FFFFFF',
@@ -243,25 +260,33 @@ gap: 3em;">
             }
         });
 
+        /*
         Toast.fire({
             icon: 'success',
             title: 'Toast con animación personalizada'
         });
+*/
 
-
-
+ 
+        // Sweet alert para error, 
         document.getElementById('btn401').addEventListener('click', function () {
             ToastR.fire({
                 icon: 'error',
-                // CAMBIAR EL COLOR DEL ICONO ES ALGO QUE SE PUEDE HACER DESDE UNA ETIQUETA EN EL SWEET ALERT
+                showCloseButton: true,
+                showCloseButtonFocus: false,
+                showConfirmButton: false,
                 titleText: 'Error al buscar tu cuenta de usuario',
                 text: 'Mensaje de error para el código 401'
             });
         });
 
+        // Sweet alert para success: 
         document.getElementById('btnSuccess').addEventListener('click', function () {
             ToastC.fire({
                 icon: 'success',
+                showCloseButton: true,
+                showCloseButtonFocus: false,
+                showConfirmButton: false,
                 title: 'Cambiar nombre de usuario',
                 text: 'Mensaje de éxito para cambiar el nombre de usuario',
             });
@@ -338,8 +363,8 @@ gap: 3em;">
                 title: 'Título del toast',
                 icon: 'success',
                 hideClass: {
-                popup: 'animate__animated animate__fadeOutRight', // Animación de salida
-            }
+                    popup: 'animate__animated animate__fadeOutRight', // Animación de salida
+                }
             });
         });
 
