@@ -227,24 +227,22 @@ gap: 3em;">
             },
         });
 
-        // Sweet alert para error (401, 500, Catch)
+        // Sweet alert para error (401, 403, 500, Catch)
         document.getElementById('btn401').addEventListener('click', function () {
             SwalRed.fire({
                 icon: 'error',
                 showCloseButton: true,
-                showCloseButtonFocus: false,
                 showConfirmButton: false,
                 titleText: 'Error al buscar tu cuenta de usuario',
                 text: 'Mensaje de error para el código 401, 500, Catch'
             });
         });
 
-        // Sweet alert para los warning, ni succes, ni error (Todo entre 401 y 500).
+        // Sweet alert para los warning, ni succes, ni error (Todo entre 400 y 409).
         document.getElementById('btn400404').addEventListener('click', function () {
             SwalRed.fire({
                 icon: 'warning',
                 showCloseButton: true,
-                showCloseButtonFocus: false,
                 showConfirmButton: false,
                 titleText: 'Error al buscar tu cuenta de usuario',
                 text: 'Mensaje de advertencia para los códigos 400 y 404'
@@ -256,7 +254,6 @@ gap: 3em;">
             SwalBlue.fire({
                 icon: 'success',
                 showCloseButton: true,
-                showCloseButtonFocus: false,
                 showConfirmButton: false,
                 titleText: 'Cambiar nombre de usuario',
                 text: 'Mensaje de éxito para cambiar el nombre de usuario',
@@ -270,7 +267,6 @@ gap: 3em;">
                 text: '¿Deseas actualizar a "Premium"? Los usuarios premium pueden publicar, editar y eliminar productos, aunque el administrador puede eliminar contenido que incumpla nuestras políticas. ¿Confirmas el cambio?',
                 icon: 'info',
                 showCloseButton: true,
-                showCloseButtonFocus: false,
                 showCancelButton: true,
                 cancelButtonText: 'Cancelar',
                 cancelButtonColor: '#000000',
@@ -287,7 +283,6 @@ gap: 3em;">
                 text: '¿Estás seguro de que deseas cerrar tu sesión?',
                 icon: 'warning',
                 showCloseButton: true,
-                showCloseButtonFocus: false,
                 showCancelButton: true,
                 cancelButtonText: 'Cancelar',
                 cancelButtonColor: '#000000',
